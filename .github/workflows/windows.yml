@@ -82,6 +82,11 @@ jobs:
           move ffmpeg\ffmpeg-n8.1-latest-${{ matrix.variant.ffmpeg }}-gpl-8.1\bin\ffplay.exe ffplay.exe
           move deno\deno.exe deno.exe
           iscc setup.iss
+      - name: Upload Setup Executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: NickvisionParabolicSetup
+          path: D:/a/Parabolic/Parabolic/inno/NickvisionParabolicSetup.exe
       - name: "Portable"
         shell: pwsh
         run: |
